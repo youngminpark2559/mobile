@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+
+https://www.youtube.com/watch?v=g3UEvcWwDFY&list=PLtmQsn29mAv8UPdAvXgq5jOfKDPpmxxti
+================================================================================
+/home/young/Pictures/2019_07_02_13:57:41.png
+
+xa002: directory for common codes
+
+================================================================================
+In some cases, you can use only "xa002" without using xa002.Android, xa002.iOS, ...
+
+================================================================================
+The codes written in xa002 are automatically converted into the codes which can run on each platform
+
+================================================================================
+Additionally, you also can add codes for only each platform 
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:00:16.png
+
+App.xaml: this makes Android, iOS, Windows start with the "same way" (controlling code)
+/home/young/Pictures/2019_07_02_14:00:42.png
+
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:01:27.png
+
+MainPage.xaml: consists of main page, UI part, "draw button"
+MainPage.xaml.cs: takes in charge of function, Coding part, "when button clicked, how that click is processed?"
+
+================================================================================
+MainPage.xmal
+
+/home/young/Pictures/2019_07_02_14:04:26.png
+
+Change the text of "Welcome to Xamarin.Forms!" to what you want
+
+/home/young/Pictures/2019_07_02_14:05:56.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:07:09.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:07:32.png
+
+Click
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:08:09.png
+
+================================================================================
+Let's create button
+
+<Button Text="Test" />
+
+/home/young/Pictures/2019_07_02_14:09:33.png
+
+================================================================================
+Since Android and iOS emulator are slow, select UWP emulator
+
+/home/young/Pictures/2019_07_02_14:10:03.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:10:13.png
+
+Click
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:11:00.png
+
+================================================================================
+Let's add "event (Clicked)" and "event handler (Button_Clicked)" to the button
+
+<Button Text="Test" Clicked="Button_Clicked" />
+ 
+Meaning:
+When above button is "clicked", run function "Button_Clicked"
+
+================================================================================
+Button_Clicked() is defined in MainPage.xaml.cs
+
+/home/young/Pictures/2019_07_02_14:13:32.png
+
+================================================================================
+Let's add code in Button_Clicked()
+
+private void Button_Clicked(object sender,EventArgs e)
+{
+   System.Diagnostics.Debug.WriteLine("Button is clicked");
+}
+
+/home/young/Pictures/2019_07_02_14:15:33.png
+
+================================================================================
+Click local computer
+
+================================================================================
+/home/young/Pictures/2019_07_02_14:16:39.png
+
+================================================================================
+
+
+
+
+
+
+</xmp>
+   </BODY>
+</HTML>
