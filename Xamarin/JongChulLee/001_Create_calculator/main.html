@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+https://www.youtube.com/watch?v=zIKBA8RQvqM&list=PLxU-iZCqT52A0CK4ij1pVIL-cqTd0yfNo&index=3&t=0s
+/mnt/1T-5e7/mycodehtml/Mobile/Xamarin/JongChulLee/001_Create_calculator/main.html
+
+================================================================================
+/home/young/Pictures/2019_07_03_07:22:50.png
+
+================================================================================
+/home/young/Pictures/2019_07_03_07:25:25.png
+
+================================================================================
+xaml example at developer.xamarin.com
+
+================================================================================ 
+App.xaml.cs 
+
+public App()
+{
+    InitializeComponent();
+
+    MainPage = new Calc.MainPage();
+}
+
+================================================================================ 
+MainPage.xaml
+
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calc;assembly=Calc"
+             x:Class="Calc.MainPage"
+             Title="Calculator Page">
+  
+  <!-- ================================================================================ -->
+  <!-- Create grid -->
+  <Grid HorizontalOptions="Center"
+        VerticalOptions="Center">
+    
+    <!-- ================================================================================ -->
+    <!-- Write name of "ViewModel class (CalcViewModel)" into BindingContext (Grid.BindingContext) -->
+
+    <Grid.BindingContext>
+      <local:CalcViewModel />
+    </Grid.BindingContext>
+
+    <!-- ================================================================================ -->
+    <!-- Define row and column of Grid -->
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+ 
+    <!-- ================================================================================ -->
+    <!-- Define "inner grid" in most-top row -->
+    <!-- to write Label Text="Xamarin Calculator" -->
+
+    <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <Frame Grid.Column="0">
+        <Label Text="Xamarin Calculator"
+               HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+               IsVisible="true"
+               FontAttributes="Bold" TextColor="Black" />
+      </Frame>
+    </Grid>
+
+    <!-- ================================================================================ -->
+    <!-- Define "inner grid" for sencond row -->
+    <!-- to write Label Text="Xamarin Calculator" -->
+    <!-- "output text box", "back button", "clear button" -->
+
+    <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <!-- ================================================================================ -->
+      <!-- Binding between "ViewModel class' DisplayText property" and "this second row" -->
+      <!-- DisplayText: property name in ViewModel class -->
+      <Frame Grid.Column="0"
+             OutlineColor="Accent">       
+        <Label Text="{Binding DisplayText}" />
+      </Frame>
+      
+      <!-- ================================================================================ -->
+      <!-- 버튼의 Command 이벤트에 Command명을 지정하고 바인딩-->
+      <!-- ViewModel 클래스에서 DeleteCharCommand 속성이 정의되야 하고 -->
+      <!-- 실제 버튼이 눌러졌을 때 Command에 대한 이벤트 핸들러를 정의해야 한다.-->
+
+      <!-- DeleteCharCommand: property name in ViewModel -->
+      <!-- Command: event -->
+      <Button Text="BACK"
+              Command="{Binding DeleteCharCommand}"
+              Grid.Column="1"
+              BorderWidth="0" />
+      <Button Text="Clear"
+              Command="{Binding ClearCommand}"
+              Grid.Column="2"
+              BorderWidth="0" />
+    </Grid>
+
+    <!-- ================================================================================ -->
+    <!-- Command: command event -->
+    <!-- binding: between command event and AddCharCommand property -->
+    <Button Text="1"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="1"
+            Grid.Row="2" Grid.Column="0" />
+    
+    <Button Text="2"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="2"
+            Grid.Row="2" Grid.Column="1" />
+
+    <Button Text="3"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="3"
+            Grid.Row="2" Grid.Column="2" />
+    
+    <Button Text="+"
+            Command="{Binding OperationCommand}"
+            CommandParameter="+"
+            Grid.Row="2" Grid.Column="3" />
+
+    <Button Text="4"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="4"
+            Grid.Row="3" Grid.Column="0" />
+
+    <Button Text="5"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="5"
+            Grid.Row="3" Grid.Column="1" />
+
+    <Button Text="6"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="6"
+            Grid.Row="3" Grid.Column="2" />
+
+    <Button Text="-"
+            Command="{Binding OperationCommand}"
+            CommandParameter="-"
+            Grid.Row="3" Grid.Column="3" />
+    
+    <Button Text="7"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="7"
+            Grid.Row="4" Grid.Column="0" />
+
+    <Button Text="8"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="8"
+            Grid.Row="4" Grid.Column="1" />
+    
+    <Button Text="9"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="9"
+            Grid.Row="4" Grid.Column="2" />
+
+    <Button Text="*"
+            Command="{Binding OperationCommand}"
+            CommandParameter="*"
+            Grid.Row="4" Grid.Column="3" />
+
+    <Button Text="0"
+            Command="{Binding AddCharCommand}"
+            CommandParameter="0"
+            Grid.Row="5" Grid.Column="0" />
+
+    <Button Text="."
+            Command="{Binding AddCharCommand}"
+            CommandParameter="."
+            Grid.Row="5" Grid.Column="1" />
+
+    <Button Text="="
+            Command="{Binding CalcCommand}"
+            CommandParameter="="
+            Grid.Row="5" Grid.Column="2" />
+    
+    <Button Text="/"
+            Command="{Binding OperationCommand}"
+            CommandParameter="/"
+            Grid.Row="5" Grid.Column="3" />
+  </Grid>
+
+</ContentPage>
+
+================================================================================
+On common project, right click, add, new, class
+Name: CalcViewModel.cs
+
+================================================================================
+using System;
+using System.ComponentModel;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace Calc
+{
+    class CalcViewModel : INotifyPropertyChanged
+    {
+        // c inputString: property, store value which user inputs
+        string inputString = "";
+
+        // c displayText: Output textbox
+        string displayText = "";
+
+        // When property changes, event should happen
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // ================================================================================
+        // Constructor
+
+        public CalcViewModel()
+        {
+            // Define event handler
+            // Execute following when "number button" is clicked
+            this.AddCharCommand = new Command<string>((key) =>
+            {
+                this.InputString += key;
+            });
+
+            // ================================================================================
+            // When "backspace button" is clicked, execute following, to clear one character
+            this.DeleteCharCommand = new Command((nothing) =>
+            {
+                this.InputString = this.InputString.Substring(0,this.InputString.Length - 1);
+            },
+                (nothing) =>
+                {
+                    // Return true if there's something to delete.
+                    return this.InputString.Length > 0;
+                });
+
+            // ================================================================================
+            // When "clear button" is clicked, execute following, to clear all text in output box
+            this.ClearCommand = new Command((nothing) =>
+            {
+                // Clear
+                this.InputString = "";
+            });
+
+            // ================================================================================
+            // When +,-,*,/ buttons are clicked, execute following
+            // Store number (which is in current output box) into Op1 property
+            // Store "clicked operator" into Op property
+            // Clear outputbox of calculator
+            this.OperationCommand = new Command<string>((key) =>
+            {
+                this.Op = key;
+                this.Op1 = Convert.ToDouble(this.InputString);
+                this.InputString = "";
+            });
+            
+            ================================================================================
+            // When "= button" is clicked, execute this
+            this.CalcCommand = new Command<string>((nothing) =>
+            {
+                this.Op2 = Convert.ToDouble(this.InputString);
+
+                switch (this.Op)
+                {
+                    case "+": this.InputString = (this.Op1 + this.Op2).ToString(); break;
+                    case "-": this.InputString = (this.Op1 - this.Op2).ToString(); break;
+                    case "*": this.InputString = (this.Op1 * this.Op2).ToString(); break;
+                    case "/": this.InputString = (this.Op1 / this.Op2).ToString(); break;
+                }
+            });
+        }
+        
+        // ================================================================================
+        // c InputString: Public property, corresponded to inputString
+
+        public string InputString
+        {
+            protected set
+            {
+                if (inputString != value)
+                {
+                    // Store value into inputString
+                    inputString = value;
+                    // Fire event
+                    OnPropertyChanged("InputString");
+                    // Store inputString into this.DisplayText
+                    this.DisplayText = inputString;
+
+                    // Activate "backspace button" when "number button" is clicked
+                    ((Command)this.DeleteCharCommand).ChangeCanExecute();
+                }
+            }
+            get { return inputString; }
+        }
+        
+        // ================================================================================
+        // c DisplayText: property, binding between outputbox
+        public string DisplayText
+        {
+            protected set
+            {
+                if (displayText != value)
+                {
+                    displayText = value;
+                    OnPropertyChanged("DisplayText");
+                }
+            }
+            get { return displayText; }
+        }
+
+        // ================================================================================
+        // Op: operator
+        public string Op { get; set; }
+        public double Op1 { get; set; }
+        public double Op2 { get; set; }
+
+        // ================================================================================
+        // When "number" is clicked
+        public ICommand AddCharCommand { protected set; get; }
+
+        // ================================================================================
+        // When "backspace" is clicked
+        public ICommand DeleteCharCommand { protected set; get; }
+
+        // ================================================================================
+        // When "C" is clicked, to clear all text
+        public ICommand ClearCommand { protected set; get; }
+        
+        // ================================================================================
+        // When +, -, *, / are clicked
+        public ICommand OperationCommand { protected set; get; }
+
+        // ================================================================================
+        // When = is clicked
+        public ICommand CalcCommand { protected set; get; }
+
+        // ================================================================================
+        protected void OnPropertyChanged(string propertyName)
+        {
+            // Fire event
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+}
+
+================================================================================
+
+</xmp>
+   </BODY>
+</HTML>
