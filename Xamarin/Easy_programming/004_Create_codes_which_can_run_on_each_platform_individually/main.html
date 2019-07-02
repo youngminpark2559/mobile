@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+
+https://www.youtube.com/watch?v=QmZlPtjDL0o&list=PLtmQsn29mAv8UPdAvXgq5jOfKDPpmxxti
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:15:51.png
+
+- There is interface named IDialer
+
+- IDialer interface is implemented in Caller_android class
+- IDialer interface is implemented in Caller_iOS class
+- IDialer interface is implemented in Caller_UWP class
+
+================================================================================
+- If you click button on Android machine,
+- DependencyService is activated
+- DependencyService finds the classes which implement IDialer interface
+- DependencyService passes "object" into Caller_android (?)
+- Android machine codes are executed
+
+================================================================================
+Add Button
+
+In MainPage.xaml
+
+<Button Text="Phone" Clicked="Button_Clicked" />
+
+/home/young/Pictures/2019_07_02_15:29:00.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:29:47.png
+
+Right click on "common code directory"
+
+================================================================================
+Click, "add -> new"
+/home/young/Pictures/2019_07_02_15:30:11.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:31:17.png
+
+Code
+Interface
+Name to "IDialer"
+Click "add"
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:31:57.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:32:18.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:34:01.png
+
+================================================================================
+Right click on "xa004.Android"
+
+/home/young/Pictures/2019_07_02_15:34:48.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:35:02.png
+
+"Add" -> "New"
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:35:29.png
+
+Android
+Class
+Name to "Caller_android"
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:39:41.png
+
+[assembly: Dependency(typeof(Caller_android))]:
+- From common code, it will request "any classes" which implement "IDialer" to the each device like Android, iOS, UWP
+- [assembly: Dependency(typeof(Caller_android))]: is annotation label for above task
+
+================================================================================
+Let's write the actual code to print message in debugger window
+
+/home/young/Pictures/2019_07_02_15:40:53.png
+
+================================================================================
+In MainPage.xaml.cs
+
+/home/young/Pictures/2019_07_02_15:43:29.png
+
+// Button is clicked
+// object and Event are passed into Button_Clicked()
+// DependencySerice requests "classes" (which implement IDialer) to each device
+// Object of Caller_android is stored in dialer
+var dialer=DependencySerice.Get<IDialer>();
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:46:25.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:49:42.png
+
+On UWP project, right click, add new
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:50:17.png
+
+Code
+Class
+Name: Caller_UWP
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:52:07.png
+
+In Caller_UWP.cs
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:53:29.png
+
+Click Android emulator
+
+================================================================================
+/home/young/Pictures/2019_07_02_15:54:11.png
+
+Run UWP emulator
+
+================================================================================
+
+
+</xmp>
+   </BODY>
+</HTML>
