@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+
+https://www.youtube.com/watch?v=J4WpI1_rV0c&list=PLtmQsn29mAv8UPdAvXgq5jOfKDPpmxxti
+
+================================================================================
+/home/young/Pictures/2019_07_02_17:28:14.png
+
+[Android] has "Label Renderer"
+[iPhone] has "Label Renderer"
+[UWP] has "Label Renderer"
+
+================================================================================
+Renderer: the thing which draws graphic
+
+================================================================================
+"Label Renderer" in [Android] uses "TextView control" to draw label in the Android phone
+"Label Renderer" in [iPhone] uses "UILabel control" to draw label in the iPhone phone
+"Label Renderer" in [UWP] uses "TextBlock control" to draw label in the UWP phone
+
+================================================================================
+Let's try to create "Custom Renderer"
+
+================================================================================
+/home/young/Pictures/2019_07_02_17:33:51.png
+
+On the common project, "Right click" "Add", "New"
+
+================================================================================
+/home/young/Pictures/2019_07_02_17:34:38.png
+
+Xamarin.Forms
+Content Page
+Name: CustomView
+
+================================================================================
+/home/young/Pictures/2019_07_02_17:36:29.png
+
+Name: CustomView
+Kind: ContentView
+
+================================================================================
+Let's use CustomView
+
+================================================================================
+MainPage.xaml
+
+Add this code
+/home/young/Pictures/2019_07_02_17:45:05.png
+
+/home/young/Pictures/2019_07_02_17:45:32.png
+
+CustomView view will be located in above location
+
+Renderer will throw the graphic onto that view
+
+================================================================================
+/home/young/Pictures/2019_07_02_17:53:46.png
+
+/home/young/Pictures/2019_07_02_17:54:12.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_17:54:56.png
+
+On Android project, "right click", "add", "new"
+
+================================================================================
+/home/young/Pictures/2019_07_02_17:55:33.png
+
+Android
+View
+Name: CustomRenderer_android
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:01:55.png
+
+CustomView
+Renderer for CustomView: CustomRenderer_android class
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:04:53.png
+
+ViewRenderer<CustomeView,Android_native_control>
+
+Map "CustomeView" to "Native_function"
+
+/home/young/Pictures/2019_07_02_18:05:20.png
+
+================================================================================
+Override event "OnElementChanged"
+
+/home/young/Pictures/2019_07_02_18:06:41.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:07:31.png
+
+/home/young/Pictures/2019_07_02_18:08:00.png
+
+================================================================================
+On "UWP project"
+Add, New
+
+Xamarin.Forms
+Content View(C#)
+
+Name: CustomRenderer_UWP
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:12:30.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:13:09.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:13:26.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:13:40.png
+
+================================================================================
+On "iOS project"
+Add, New
+
+Apple
+UIView class
+
+Name: CustomRenderer_iOS
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:15:45.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:16:23.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:16:42.png
+
+================================================================================
+/home/young/Pictures/2019_07_02_18:17:01.png
+
+
+
+
+
+</xmp>
+   </BODY>
+</HTML>
