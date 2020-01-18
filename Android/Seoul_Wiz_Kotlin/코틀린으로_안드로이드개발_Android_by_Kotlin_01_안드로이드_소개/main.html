@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+      <style rel="stylesheet" type="text/css">
+body {
+ font-size: 20px;
+ 
+ margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 100px;
+    
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-right: 80px;
+    padding-left: 80px;
+    
+    line-height:35px;
+}
+/* img {
+ width:900px;
+} */
+</style>
+      <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    "HTML-CSS" : {
+        availableFonts : ["STIX"],
+        preferredFont : "STIX",
+        webFont : "STIX-Web",
+        imageFont : null
+    }
+});
+</script>
+     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">    
+    MathJax.Hub.Config({
+        HTML: ["input/TeX","output/HTML-CSS"],
+        TeX: { extensions: ["AMSmath.js","AMSsymbols.js"], 
+               equationNumbers: { autoNumber: "AMS" } },
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: { inlineMath: [ ['$$$','$$$'] ],
+                   displayMath: [ ['$$$$','$$$$'] ],
+                   processEscapes: true },
+        "HTML-CSS": { availableFonts: ["TeX"],
+                      linebreaks: { automatic: true } }
+    });
+</script>
+   </HEAD>
+   <BODY>
+<xmp>
+
+This is personal study note
+Copyright and original reference are from:
+https://www.youtube.com/watch?v=FLpnnlrVpa8
+
+================================================================================
+</xmp><img src='./pics/2020_01_18_16:56:49.png' alt=''><xmp>
+
+- 안드로이드는 리눅스 커널 (하드웨어 드라이버 관리, 전원 관리 등) 위에서 동작함
+- 리눅스 커널 위에 안드로이드 런타임이 올라가있음 (안드로이드 앱을 구동시켜줌)
+- activity 를 만든다
+- activity 위에 apps 를 올린다
+
+================================================================================
+</xmp><img src='./pics/2020_01_18_16:59:40.png' alt=''><xmp>
+
+- 개발 시에는 API level 이 참고됨
+
+================================================================================
+</xmp><img src='./pics/2020_01_18_17:04:07.png' alt=''><xmp>
+
+- 안드로이드 동작 순서
+- 1: 디바이스에서 액티비티를 연다 (안드로이드 런타임이 열여줌)
+- 2: 액티비티는 layout 파일을 분석해서 화면 (액티비티)에 뿌려준다
+- 3: 뿌려진 액티비티는 디바이스 화면에 표시된다
+- 4: 유저가 조작을 디바이스에 한다
+- 5: 이벤트를 액티비티가 처리한다
+
+================================================================================
+</xmp><img src='./pics/2020_01_18_17:07:26.png' alt=''><xmp>
+
+</xmp>
+   </BODY>
+</HTML>
